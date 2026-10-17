@@ -1,12 +1,20 @@
 {
-  "name":"Body Design Workout",
-  "short_name":"Body Design",
-  "start_url":"./",
-  "display":"standalone",
-  "background_color":"#0f1013",
-  "theme_color":"#111216",
-  "icons":[
-    {"src":"icon-192.png","sizes":"192x192","type":"image/png"},
-    {"src":"icon-512.png","sizes":"512x512","type":"image/png"}
+  "name": "Paulina Best Ass Workout",
+  "short_name": "Paulina Workout",
+  "start_url": "./",
+  "display": "standalone",
+  "background_color": "#0b0c11",
+  "theme_color": "#0c0d12",
+  "icons": [
+    {
+      "src": "icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
   ]
 }
