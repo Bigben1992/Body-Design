@@ -1,205 +1,42 @@
 <!doctype html>
 <html lang="ru">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-  <meta name="theme-color" content="#111216">
-  <meta name="apple-mobile-web-app-capable" content="yes">
-  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-  <meta name="apple-mobile-web-app-title" content="Body Design">
-  <link rel="manifest" href="manifest.webmanifest">
-  <link rel="apple-touch-icon" href="icon-192.png">
-  <title>Body Design Workout</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#111216">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="Body Design">
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="apple-touch-icon" href="icon-192.png">
+<title>Body Design Workout</title>
 <style>
-:root {
-  --bg:#0f1013; --card:#17191f; --card2:#20232b; --text:#f5f7fb; --muted:#a9afbd;
-  --accent:#ff6fae; --accent2:#7d8cff; --line:#2b2f39; --good:#64d39a;
-}
-*{box-sizing:border-box}
-body{margin:0;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;background:var(--bg);color:var(--text)}
-header{position:sticky;top:0;z-index:10;background:rgba(15,16,19,.94);backdrop-filter:blur(18px);padding:calc(env(safe-area-inset-top) + 12px) 18px 12px;border-bottom:1px solid var(--line)}
-h1{font-size:22px;margin:0} .sub{color:var(--muted);font-size:13px;margin-top:4px}
-main{padding:16px 14px calc(90px + env(safe-area-inset-bottom));max-width:760px;margin:auto}
-.tabs{display:flex;gap:8px;margin:0 0 14px;overflow:auto}
-.tab{border:1px solid var(--line);background:var(--card);color:var(--text);padding:10px 12px;border-radius:14px;white-space:nowrap}
-.tab.active{background:var(--accent);color:#151018;border-color:transparent;font-weight:700}
-.card{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:15px;margin-bottom:12px}
-.card h2{font-size:19px;margin:0 0 4px} .meta{color:var(--muted);font-size:13px}
-.exercise{background:var(--card2);border-radius:16px;padding:13px;margin-top:12px}
-.exercise-title{display:flex;justify-content:space-between;gap:12px;align-items:flex-start}
-.exercise h3{margin:0;font-size:17px}
-.badge{font-size:12px;color:#111;background:#f5f7fb;border-radius:999px;padding:4px 8px;white-space:nowrap}
-.tech{color:#d8dbe3;font-size:13px;line-height:1.45;margin:10px 0}
-details summary{color:var(--accent);cursor:pointer;font-size:13px}
-.setrow{display:grid;grid-template-columns:42px 1fr 1fr 70px;gap:7px;align-items:center;margin-top:8px}
-input,select,textarea{width:100%;background:#111319;border:1px solid #363b47;color:white;border-radius:10px;padding:10px;font-size:15px}
-textarea{min-height:70px;resize:vertical}
-.small{font-size:12px;color:var(--muted)}
-button.primary{width:100%;border:0;border-radius:14px;background:var(--accent);color:#181019;padding:13px 14px;font-weight:800;font-size:16px;margin-top:12px}
-button.secondary{border:1px solid var(--line);background:var(--card2);color:var(--text);border-radius:12px;padding:10px 12px}
-.bottomnav{position:fixed;bottom:0;left:0;right:0;background:rgba(15,16,19,.96);backdrop-filter:blur(16px);border-top:1px solid var(--line);padding:8px 10px calc(8px + env(safe-area-inset-bottom));display:flex;justify-content:center;gap:8px;z-index:20}
-.bottomnav button{flex:1;max-width:220px;border:0;background:transparent;color:var(--muted);padding:10px 6px;border-radius:12px}
-.bottomnav button.active{color:white;background:var(--card2)}
-.history-item{padding:12px 0;border-bottom:1px solid var(--line)}
-.progressbar{height:8px;background:#2a2e38;border-radius:999px;overflow:hidden;margin-top:8px}
-.progressbar > div{height:100%;background:var(--accent);width:0}
-.chart{width:100%;height:180px;background:#12141a;border-radius:14px;margin-top:10px}
-.flex{display:flex;gap:8px;align-items:center;justify-content:space-between}
-a.video{display:inline-block;margin-top:8px;color:#fff;text-decoration:none;background:#303545;padding:8px 10px;border-radius:10px;font-size:13px}
-.notice{font-size:12px;color:var(--muted);line-height:1.45}
+:root{--bg:#0f1013;--card:#17191f;--card2:#20232b;--text:#f6f7fb;--muted:#aab0bd;--accent:#ff6fae;--line:#2e323d;--good:#62d39c}
+*{box-sizing:border-box}body{margin:0;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;background:var(--bg);color:var(--text)}
+header{position:sticky;top:0;z-index:20;background:rgba(15,16,19,.94);backdrop-filter:blur(18px);padding:calc(env(safe-area-inset-top) + 12px) 16px 11px;border-bottom:1px solid var(--line)}
+h1{font-size:22px;margin:0}.sub{color:var(--muted);font-size:13px;margin-top:4px}
+main{padding:15px 13px calc(110px + env(safe-area-inset-bottom));max-width:760px;margin:auto}
+.tabs{display:flex;gap:8px;margin-bottom:13px;overflow:auto}.tab{border:1px solid var(--line);background:var(--card);color:var(--text);padding:10px 12px;border-radius:14px;white-space:nowrap}.tab.active{background:var(--accent);color:#151018;border-color:transparent;font-weight:800}
+.card{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:14px;margin-bottom:12px}.card h2{font-size:19px;margin:0 0 4px}.meta,.small{color:var(--muted);font-size:12px}.notice{font-size:12px;color:var(--muted);line-height:1.45}
+.exercise{background:var(--card2);border-radius:17px;overflow:hidden;margin-top:13px;border:1px solid #292e39}.exercise-photo{width:100%;aspect-ratio:16/9;object-fit:cover;display:block;background:#111}.exercise-body{padding:13px}
+.exercise-title{display:flex;justify-content:space-between;gap:10px;align-items:flex-start}.exercise h3{margin:0;font-size:18px}.badge{font-size:11px;color:#111;background:#f5f7fb;border-radius:999px;padding:4px 8px;white-space:nowrap}.focus{color:#d7dae2;font-size:13px;line-height:1.4;margin-top:8px}
+details{margin-top:9px;border-top:1px solid #333845;padding-top:8px}details summary{color:var(--accent);cursor:pointer;font-weight:700;font-size:13px}.tech-list{padding-left:19px;color:#e4e6ed;font-size:13px;line-height:1.45}.tech-list li{margin:6px 0}.mistakes{color:#f2c7d8}
+.video-actions{display:flex;gap:7px;flex-wrap:wrap;margin-top:10px}.video-actions a,.video-actions button{border:0;text-decoration:none;background:#303545;color:white;padding:9px 10px;border-radius:11px;font-size:13px}.video-wrap{display:none;margin-top:10px;aspect-ratio:16/9}.video-wrap.show{display:block}.video-wrap iframe{width:100%;height:100%;border:0;border-radius:12px}
+.prev{margin:10px 0 4px;padding:9px;background:#15171c;border-radius:11px}.suggestion{margin-top:6px;color:#d9e0ff;font-size:12px}.pr{margin-top:6px;color:var(--good);font-size:12px}
+.sethead,.setrow{display:grid;grid-template-columns:36px 1fr 1fr 58px 44px;gap:6px;align-items:center}.sethead{margin-top:10px;color:var(--muted);font-size:10px;text-align:center}.setrow{margin-top:6px}
+input,select,textarea{width:100%;background:#111319;border:1px solid #373c48;color:white;border-radius:10px;padding:10px 8px;font-size:15px}textarea{min-height:72px;resize:vertical}.donebtn{height:39px;border:1px solid #444b5b;border-radius:10px;background:#171a21;color:#ddd;font-size:17px}.donebtn.done{background:var(--good);color:#0b1b13;border-color:transparent}
+button.primary{width:100%;border:0;border-radius:14px;background:var(--accent);color:#181019;padding:13px;font-weight:800;font-size:16px;margin-top:12px}button.secondary,.secondary{border:1px solid var(--line);background:var(--card2);color:var(--text);border-radius:12px;padding:10px 12px;text-decoration:none}.flex{display:flex;gap:8px;align-items:center;justify-content:space-between}.actions{display:flex;gap:8px;flex-wrap:wrap;margin-top:10px}
+.bottomnav{position:fixed;bottom:0;left:0;right:0;background:rgba(15,16,19,.96);backdrop-filter:blur(16px);border-top:1px solid var(--line);padding:8px 9px calc(8px + env(safe-area-inset-bottom));display:flex;justify-content:center;gap:6px;z-index:30}.bottomnav button{flex:1;max-width:220px;border:0;background:transparent;color:var(--muted);padding:9px 4px;border-radius:11px;font-size:12px}.bottomnav button.active{color:white;background:var(--card2)}
+.timer{position:fixed;left:12px;right:12px;bottom:calc(72px + env(safe-area-inset-bottom));z-index:40;background:#272b35;border:1px solid #444b5a;border-radius:16px;padding:10px 12px;display:none;box-shadow:0 8px 30px rgba(0,0,0,.4)}.timer.show{display:flex;align-items:center;gap:10px}.timer-time{font-size:25px;font-weight:900;min-width:72px}.timer-label{font-size:11px;color:var(--muted);flex:1}.timer button{border:0;background:#3a3f4d;color:white;border-radius:9px;padding:8px}
+.history-item{padding:12px 0;border-bottom:1px solid var(--line)}.chart{width:100%;height:190px;background:#12141a;border-radius:14px;margin-top:10px}.statgrid{display:grid;grid-template-columns:repeat(2,1fr);gap:8px;margin-top:10px}.stat{background:#12141a;border-radius:12px;padding:10px}.stat b{display:block;font-size:17px}.stat span{font-size:11px;color:var(--muted)}.backupbox{margin-top:12px;padding:11px;background:#14161b;border-radius:13px}
+@media(max-width:430px){.sethead,.setrow{grid-template-columns:30px 1fr 1fr 50px 41px}.exercise-body{padding:11px}}
 </style>
 </head>
 <body>
-<header><h1>Body Design Workout</h1><div class="sub">Glutes 60% · Legs 40% · 3 тренировки в неделю</div></header>
+<header><h1>Body Design Workout</h1><div class="sub">Glutes 60% · Legs 40% · прогрессия по весам</div></header>
 <main id="app"></main>
-<nav class="bottomnav">
-  <button id="nav-workout" class="active" onclick="showSection('workout')">🏋️ Тренировки</button>
-  <button id="nav-history" onclick="showSection('history')">🗓 История</button>
-  <button id="nav-progress" onclick="showSection('progress')">📈 Прогресс</button>
-</nav>
-
-<script>
-const WORKOUTS = [{"id": "w1", "title": "Тренировка 1", "subtitle": "Ягодицы + квадрицепсы + спина", "exercises": [{"id": "hip_thrust_heavy", "name": "Hip Thrust", "sets": 3, "reps": "6–10", "rest": "2–3 мин", "unit": "kg", "tech": "Верх спины на скамье, стопы примерно на ширине таза. Подними таз за счёт ягодиц, вверху голени примерно вертикальны. Пауза 1 секунда, не переразгибай поясницу."}, {"id": "hack_squat", "name": "Hack Squat", "sets": 3, "reps": "8–12", "rest": "2–3 мин", "unit": "kg", "tech": "Спина и таз прижаты к опоре. Стопы примерно на ширине плеч. Колени идут по направлению носков. Опускайся глубоко, пока сохраняется контроль таза и спины."}, {"id": "bulgarian", "name": "Bulgarian Split Squat", "sets": 2, "reps": "8–12 / нога", "rest": "2 мин", "unit": "kg", "tech": "Задняя стопа на скамье, передняя достаточно далеко впереди. Небольшой наклон корпуса вперёд увеличивает акцент на ягодицы. Подъём за счёт передней ноги."}, {"id": "lat_pulldown", "name": "Lat Pulldown", "sets": 3, "reps": "8–12", "rest": "90–120 сек", "unit": "kg", "tech": "Бёдра зафиксированы. Потяни рукоятку к верхней части груди, локти направляй вниз. Не тяни блок за голову и не раскачивайся."}, {"id": "calf_raise_1", "name": "Standing Calf Raise", "sets": 3, "reps": "12–20", "rest": "60–90 сек", "unit": "kg", "tech": "Полное растяжение икр внизу, подъём максимально высоко на носки, короткая пауза и медленное опускание."}, {"id": "plank_1", "name": "Forearm Plank", "sets": 3, "reps": "30–45 сек", "rest": "45–60 сек", "unit": "sec", "tech": "Локти под плечами. Напряги пресс и ягодицы. Корпус прямой, таз не проваливается и не поднимается слишком высоко."}]}, {"id": "w2", "title": "Тренировка 2", "subtitle": "Ягодицы + задняя поверхность бедра + спина + руки", "exercises": [{"id": "rdl", "name": "Romanian Deadlift", "sets": 3, "reps": "8–10", "rest": "2–3 мин", "unit": "kg", "tech": "Колени слегка согнуты. Отводи таз назад, гантели или штанга идут близко к ногам. Опускайся до сильного растяжения задней поверхности бедра, сохраняя нейтральную спину."}, {"id": "leg_curl", "name": "Seated Leg Curl", "sets": 3, "reps": "10–15", "rest": "90 сек", "unit": "kg", "tech": "Колено примерно совпадает с осью тренажёра. Согни ноги контролируемо, короткая пауза внизу, медленно верни вес."}, {"id": "hip_abduction", "name": "Hip Abduction", "sets": 2, "reps": "15–20", "rest": "60–90 сек", "unit": "kg", "tech": "Таз стабилен. Разводи колени наружу контролируемо, задержись примерно на секунду, затем медленно верни ноги."}, {"id": "cable_row", "name": "Seated Cable Row", "sets": 3, "reps": "8–12", "rest": "90–120 сек", "unit": "kg", "tech": "Нейтральная спина. Потяни рукоятку к верхней части живота, локти назад, лопатки сведи контролируемо. Не раскачивай корпус."}, {"id": "triceps", "name": "Triceps Pushdown", "sets": 2, "reps": "10–15", "rest": "60–90 сек", "unit": "kg", "tech": "Локти около корпуса и почти неподвижны. Разогни предплечья вниз, сократи трицепс, медленно верни рукоятку."}, {"id": "biceps", "name": "Dumbbell Biceps Curl", "sets": 2, "reps": "10–15", "rest": "60–90 сек", "unit": "kg", "tech": "Корпус неподвижен, локти рядом с туловищем. Подними гантели без раскачивания, медленно опусти."}, {"id": "knee_raise", "name": "Captain's Chair Knee Raise", "sets": 3, "reps": "10–15", "rest": "60–90 сек", "unit": "reps", "tech": "Подними согнутые колени и в верхней точке слегка подкрути таз вверх. Не раскачивайся, опускай ноги медленно."}]}, {"id": "w3", "title": "Тренировка 3", "subtitle": "Ягодицы + ноги + спина + грудь", "exercises": [{"id": "leg_press", "name": "Leg Press", "sets": 3, "reps": "10–15", "rest": "2–3 мин", "unit": "kg", "tech": "Спина и таз прижаты к сиденью. Стопы примерно на ширине плеч, средняя или слегка повышенная позиция. Опускай платформу глубоко, пока таз не начинает подкручиваться."}, {"id": "hip_thrust_volume", "name": "Hip Thrust", "sets": 3, "reps": "10–15", "rest": "2 мин", "unit": "kg", "tech": "Это более лёгкий, многоповторный вариант. В верхней точке держи ягодицы сокращёнными 1–2 секунды, опускай таз контролируемо."}, {"id": "reverse_lunge", "name": "Reverse Lunges", "sets": 2, "reps": "10–12 / нога", "rest": "2 мин", "unit": "kg", "tech": "Сделай длинный шаг назад. Основная нагрузка на передней ноге. Небольшой наклон корпуса вперёд допустим для большего акцента на ягодицы."}, {"id": "leg_extension", "name": "Leg Extension", "sets": 2, "reps": "12–15", "rest": "60–90 сек", "unit": "kg", "tech": "Колено примерно совпадает с осью тренажёра. Плавно разогни ноги, на секунду сократи квадрицепсы и медленно опусти вес."}, {"id": "chest_press", "name": "Chest Press", "sets": 2, "reps": "10–12", "rest": "90 сек", "unit": "kg", "tech": "Рукоятки примерно на уровне середины груди. Спина на опоре, лопатки стабильны. Выжми вперёд и контролируемо верни."}, {"id": "one_arm_row", "name": "One-Arm Dumbbell Row", "sets": 2, "reps": "10–12 / рука", "rest": "60–90 сек", "unit": "kg", "tech": "Одна рука и колено на скамье. Спина нейтральная. Потяни локоть назад к тазу, наверху сократи мышцы спины и медленно опусти гантель."}, {"id": "calf_raise_3", "name": "Standing Calf Raise", "sets": 3, "reps": "12–20", "rest": "60–90 сек", "unit": "kg", "tech": "Полное растяжение снизу, подъём максимально высоко на носки, короткая пауза и медленное опускание."}, {"id": "plank_3", "name": "Forearm Plank", "sets": 2, "reps": "30–45 сек", "rest": "45–60 сек", "unit": "sec", "tech": "Локти под плечами. Пресс и ягодицы напряжены, таз нейтрален, поясница не провисает."}]}];
-let currentSection = 'workout';
-let currentWorkout = 'w1';
-
-function esc(s){return String(s??'').replace(/[&<>"']/g,m=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[m]))}
-function key(){return 'bodyDesignLogsV1'}
-function getLogs(){try{return JSON.parse(localStorage.getItem(key())||'[]')}catch(e){return []}}
-function setLogs(x){localStorage.setItem(key(),JSON.stringify(x))}
-function todayLocal(){ const d=new Date(); return d.toISOString().slice(0,10); }
-function latestForExercise(id){
-  const logs=getLogs().slice().sort((a,b)=>new Date(b.date)-new Date(a.date));
-  for(const l of logs){
-    const e=l.exercises.find(x=>x.id===id);
-    if(e) return {date:l.date,sets:e.sets};
-  }
-  return null;
-}
-function videoUrl(name){return 'https://www.youtube.com/results?search_query='+encodeURIComponent(name+' proper form woman gym');}
-
-function showSection(s){
-  currentSection=s;
-  document.querySelectorAll('.bottomnav button').forEach(b=>b.classList.remove('active'));
-  document.getElementById('nav-'+s).classList.add('active');
-  render();
-}
-function selectWorkout(id){currentWorkout=id;render()}
-
-function render(){
-  if(currentSection==='workout') renderWorkout();
-  if(currentSection==='history') renderHistory();
-  if(currentSection==='progress') renderProgress();
-}
-
-function renderWorkout(){
- const w=WORKOUTS.find(x=>x.id===currentWorkout);
- let h=`<div class="tabs">${WORKOUTS.map(x=>`<button class="tab ${x.id===currentWorkout?'active':''}" onclick="selectWorkout('${x.id}')">${x.title}</button>`).join('')}</div>`;
- h+=`<div class="card"><div class="flex"><div><h2>${w.title}</h2><div class="meta">${w.subtitle}</div></div><input id="session-date" type="date" value="${todayLocal()}" style="width:145px"></div>
- <div class="notice" style="margin-top:8px">Рабочие подходы: обычно RIR 1–2. Вес повышай, когда достигается верхняя граница повторений во всех подходах с хорошей техникой.</div>`;
- w.exercises.forEach(ex=>{
-   const prev=latestForExercise(ex.id);
-   let prevText='Нет предыдущей записи';
-   if(prev){
-      prevText = `${prev.date} · ` + prev.sets.map(s=>`${s.weight||'—'}${ex.unit==='sec'?' сек':' кг'} × ${s.reps||'—'}`).join(' · ');
-   }
-   h+=`<div class="exercise" data-ex="${ex.id}">
-      <div class="exercise-title"><div><h3>${ex.name}</h3><div class="small">${ex.sets} подхода · ${ex.reps} · отдых ${ex.rest}</div></div><span class="badge">${ex.unit==='sec'?'TIME':'RIR 1–2'}</span></div>
-      <details><summary>Техника выполнения</summary><div class="tech">${ex.tech}</div></details>
-      <a class="video" target="_blank" href="${videoUrl(ex.name)}">▶ Видео техники</a>
-      <div class="small" style="margin-top:9px">Предыдущая: ${esc(prevText)}</div>`;
-   for(let i=1;i<=ex.sets;i++){
-     const weightLabel = ex.unit==='sec' ? 'сек' : (ex.unit==='reps' ? 'вес' : 'кг');
-     h+=`<div class="setrow">
-       <div class="small">#${i}</div>
-       <input class="weight" inputmode="decimal" placeholder="${weightLabel}">
-       <input class="reps" inputmode="numeric" placeholder="${ex.unit==='sec'?'сек':'повт.'}">
-       <input class="rir" inputmode="numeric" placeholder="RIR">
-     </div>`;
-   }
-   h+=`</div>`;
- });
- h+=`<textarea id="notes" placeholder="Заметки по тренировке"></textarea><button class="primary" onclick="saveWorkout()">Сохранить тренировку</button></div>`;
- document.getElementById('app').innerHTML=h;
-}
-
-function saveWorkout(){
- const w=WORKOUTS.find(x=>x.id===currentWorkout);
- const date=document.getElementById('session-date').value||todayLocal();
- const exercises=[];
- document.querySelectorAll('.exercise').forEach(el=>{
-   const id=el.dataset.ex;
-   const sets=[];
-   el.querySelectorAll('.setrow').forEach(row=>{
-     sets.push({
-       weight: row.querySelector('.weight').value,
-       reps: row.querySelector('.reps').value,
-       rir: row.querySelector('.rir').value
-     });
-   });
-   exercises.push({id,sets});
- });
- const logs=getLogs();
- logs.push({id:Date.now(),date,workoutId:currentWorkout,notes:document.getElementById('notes').value,exercises});
- setLogs(logs);
- alert('Тренировка сохранена');
-}
-
-function renderHistory(){
- const logs=getLogs().slice().sort((a,b)=>new Date(b.date)-new Date(a.date));
- let h=`<div class="card"><h2>История тренировок</h2>`;
- if(!logs.length) h+=`<p class="notice">Пока нет сохранённых тренировок.</p>`;
- logs.forEach(l=>{
-   const w=WORKOUTS.find(x=>x.id===l.workoutId);
-   h+=`<div class="history-item"><div class="flex"><strong>${w?.title||l.workoutId}</strong><span class="small">${l.date}</span></div><div class="small">${w?.subtitle||''}</div>`;
-   l.exercises.forEach(e=>{
-     const ex=WORKOUTS.flatMap(x=>x.exercises).find(x=>x.id===e.id);
-     const vals=e.sets.map(s=>`${s.weight||'—'}×${s.reps||'—'}`).join(' · ');
-     h+=`<div class="small" style="margin-top:5px"><b>${ex?.name||e.id}</b>: ${esc(vals)}</div>`;
-   });
-   if(l.notes) h+=`<div class="small" style="margin-top:5px">📝 ${esc(l.notes)}</div>`;
-   h+=`<button class="secondary" style="margin-top:8px" onclick="deleteLog(${l.id})">Удалить</button></div>`;
- });
- h+=`<div style="display:flex;gap:8px;margin-top:12px"><button class="secondary" onclick="exportData()">Экспорт</button><label class="secondary">Импорт<input id="importFile" type="file" accept="application/json" style="display:none" onchange="importData(event)"></label></div></div>`;
- document.getElementById('app').innerHTML=h;
-}
-function deleteLog(id){ if(confirm('Удалить эту тренировку?')){setLogs(getLogs().filter(x=>x.id!==id));renderHistory();}}
-function exportData(){
- const blob=new Blob([JSON.stringify(getLogs(),null,2)],{type:'application/json'});
- const a=document.createElement('a'); a.href=URL.createObjectURL(blob); a.download='body-design-workouts.json'; a.click(); URL.revokeObjectURL(a.href);
-}
-function importData(ev){
- const f=ev.target.files[0]; if(!f)return;
- const r=new FileReader(); r.onload=()=>{try{const x=JSON.parse(r.result); if(Array.isArray(x)){setLogs(x);renderHistory();}}catch(e){alert('Не удалось импортировать файл')}}; r.readAsText(f);
-}
-
-function renderProgress(){
- const exs=WORKOUTS.flatMap(w=>w.exercises).filter((e,i,a)=>a.findIndex(x=>x.id===e.id)===i);
- let h=`<div class="card"><h2>Прогресс</h2><select id="progressEx" onchange="drawProgress()">${exs.map(e=>`<option value="${e.id}">${e.name}</option>`).join('')}</select><svg id="chart" class="chart" viewBox="0 0 600 180" preserveAspectRatio="none"></svg><div id="progressText" class="small" style="margin-top:8px"></div></div>`;
- document.getElementById('app').innerHTML=h; setTimeout(drawProgress,0);
-}
-function drawProgress(){
- const id=document.getElementById('progressEx').value;
- const ex=WORKOUTS.flatMap(w=>w.exercises).find(x=>x.id===id);
- const logs=getLogs().slice().sort((a,b)=>new Date(a.date)-new Date(b.date));
- let pts=[];
- logs.forEach(l=>{
-   const e=l.exercises.find(x=>x.id===id); if(!e)return;
-   const vals=e.sets.map(s=>parseFloat(s.weight)).filter(Number.isFinite);
-   if(vals.length) pts.push({date:l.date,value:Math.max(...vals)});
- });
- const svg=document.getElementById('chart');
- if(!pts.length){svg.innerHTML='<text x="300" y="95" text-anchor="middle" fill="#a9afbd" font-size="16">Пока нет данных</text>';document.getElementById('progressText').textContent='';return;}
- const max=Math.max(...pts.map(p=>p.value)), min=Math.min(...pts.map(p=>p.value));
- const pad=24, W=600,H=180, span=(max-min)||1;
- const xy=pts.map((p,i)=>({x:pad+(W-2*pad)*(pts.length===1?.5:i/(pts.length-1)),y:H-pad-(H-2*pad)*(p.value-min)/span,...p}));
- const line=xy.map((p,i)=>(i?'L':'M')+p.x+','+p.y).join(' ');
- svg.innerHTML=`<path d="${line}" fill="none" stroke="#ff6fae" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>`+
- xy.map(p=>`<circle cx="${p.x}" cy="${p.y}" r="6" fill="#f5f7fb"/><text x="${p.x}" y="${Math.max(14,p.y-10)}" text-anchor="middle" fill="#f5f7fb" font-size="12">${p.value}</text>`).join('');
- document.getElementById('progressText').textContent=`${ex.name} · лучший рабочий вес по каждой сохранённой тренировке`;
-}
-render();
-if('serviceWorker' in navigator) navigator.serviceWorker.register('sw.js').catch(()=>{});
-</script>
+<div id="restTimer" class="timer"><div class="timer-time" id="timerTime">0:00</div><div class="timer-label" id="timerLabel">Отдых</div><button onclick="adjustTimer(-15)">−15</button><button onclick="adjustTimer(15)">+15</button><button onclick="stopTimer()">✕</button></div>
+<nav class="bottomnav"><button id="nav-workout" class="active" onclick="showSection('workout')">🏋️ Тренировки</button><button id="nav-history" onclick="showSection('history')">🗓 История</button><button id="nav-progress" onclick="showSection('progress')">📈 Прогресс</button></nav>
+<script src="workouts.js"></script><script src="app.js"></script>
 </body>
 </html>
