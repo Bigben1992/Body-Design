@@ -42,6 +42,8 @@ button.primary{width:100%;border:0;border-radius:16px;background:linear-gradient
   filter:drop-shadow(0 5px 14px rgba(255,79,152,.16));
 }
 
+
+.exercise-photo{width:100%;aspect-ratio:16/9;object-fit:cover;object-position:center 22%;display:block;background:#111;transform:scale(1.06);transform-origin:center top}
 </style>
 </head>
 <body>
@@ -49,5 +51,5 @@ button.primary{width:100%;border:0;border-radius:16px;background:linear-gradient
 <main id="app"></main>
 <div id="restTimer" class="timer"><div class="timer-time" id="timerTime">0:00</div><div class="timer-label" id="timerLabel">Отдых</div><button onclick="adjustTimer(-15)">−15</button><button onclick="adjustTimer(15)">+15</button><button onclick="stopTimer()">✕</button></div>
 <nav class="bottomnav"><button id="nav-workout" class="active" onclick="showSection('workout')">🏋️ Тренировки</button><button id="nav-history" onclick="showSection('history')">🗓 История</button><button id="nav-progress" onclick="showSection('progress')">📈 Прогресс</button></nav>
-<script src="workouts.js"></script><script src="app.js"></script>
+<script src="workouts.js?v=7"></script><script src="app.js?v=7"></script>
 </body></html>
