@@ -102,9 +102,9 @@ input,select,textarea,button{max-width:100%;box-sizing:border-box}
 }
 
 
-/* Calf raise preview: taller ratio so the exercise equipment and stance stay visible. */
+/* Compact 16:9 calf raise preview: entire movement remains visible in its landscape image. */
 .exercise[data-ex="calf_raise_1"] .exercise-photo,
-.exercise[data-ex="calf_raise_3"] .exercise-photo { aspect-ratio: 3 / 5; object-fit: cover; object-position: 50% 50%; }
+.exercise[data-ex="calf_raise_3"] .exercise-photo { aspect-ratio: 16 / 9; object-fit: cover; object-position: center; }
 
 /* v17: technique instructions are deliberately expanded for standing calf raises. */
 .technique-details{margin-top:12px;border:1px solid color-mix(in srgb,var(--accent2) 24%,var(--line));border-radius:14px;background:var(--surface2);padding:0 12px 10px;overflow:hidden}
@@ -124,5 +124,5 @@ input,select,textarea,button{max-width:100%;box-sizing:border-box}
 <main id="app"></main>
 <div id="restTimer" class="timer"><div class="timer-time" id="timerTime">0:00</div><div class="timer-label" id="timerLabel">Отдых</div><button onclick="adjustTimer(-15)">−15</button><button onclick="adjustTimer(15)">+15</button><button onclick="stopTimer()">✕</button></div>
 <nav class="bottomnav"><button id="nav-workout" class="active" onclick="showSection('workout')">🏋️ Тренировки</button><button id="nav-history" onclick="showSection('history')">🗓 История</button><button id="nav-progress" onclick="showSection('progress')">📈 Прогресс</button></nav>
-<script src="workouts.js?v=17"></script><script src="app.js?v=17"></script>
+<script src="workouts.js?v=18"></script><script src="app.js?v=18"></script>
 </body></html>
