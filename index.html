@@ -18,7 +18,7 @@ header{position:sticky;top:0;z-index:20;background:var(--header);backdrop-filter
 .header-row{display:flex;align-items:center;justify-content:space-between;gap:10px;max-width:760px;margin:auto}h1{font-size:20px;line-height:1.08;margin:0;font-weight:850;letter-spacing:-.45px}.sub{color:var(--muted);font-size:12px;margin-top:5px}.theme-toggle{display:flex;gap:6px;align-items:center;border:1px solid color-mix(in srgb,var(--accent2) 22%,var(--line));background:linear-gradient(180deg,var(--surface),var(--surface2));color:var(--text);padding:9px 12px;border-radius:14px;box-shadow:0 8px 18px rgba(0,0,0,.12),inset 0 1px rgba(255,255,255,.28);font-weight:800}.theme-toggle span{font-size:11px}
 main{padding:15px 13px calc(110px + env(safe-area-inset-bottom));max-width:760px;margin:auto}.tabs{display:flex;gap:8px;margin-bottom:13px;overflow:auto;padding:1px 1px 4px}.tab{border:1px solid var(--line);background:var(--surface);color:var(--text);padding:10px 13px;border-radius:14px;white-space:nowrap;box-shadow:var(--softshadow);font-weight:750;transition:.15s}.tab:active{transform:translateY(2px);box-shadow:none}.tab.active{background:linear-gradient(135deg,var(--accent),var(--accent2));color:white;border-color:transparent;box-shadow:0 8px 18px color-mix(in srgb,var(--accent) 28%,transparent),inset 0 1px rgba(255,255,255,.35)}
 .card{background:var(--surface);border:1px solid var(--line);border-radius:20px;padding:14px;margin-bottom:12px;box-shadow:var(--shadow)}.hero-card{background:linear-gradient(160deg,var(--surface),color-mix(in srgb,var(--surface2) 72%,var(--accent2) 6%))}.card h2{font-size:19px;margin:0 0 4px}.meta,.small{color:var(--muted);font-size:12px}.notice{font-size:12px;color:var(--muted);line-height:1.5}
-.exercise{background:var(--surface2);border-radius:19px;overflow:hidden;margin-top:14px;border:1px solid var(--line);box-shadow:var(--softshadow)}.photo-wrap{position:relative;background:#111;overflow:hidden}.exercise-photo{width:100%;aspect-ratio:16/9;object-fit:cover;display:block;filter:saturate(.96) contrast(1.02)}.photo-wrap:after{content:"";position:absolute;inset:auto 0 0;height:35%;background:linear-gradient(transparent,rgba(0,0,0,.38));pointer-events:none}.photo-chip{position:absolute;left:10px;bottom:9px;z-index:2;background:rgba(15,16,22,.75);backdrop-filter:blur(8px);color:#fff;border:1px solid rgba(255,255,255,.18);padding:5px 8px;border-radius:999px;font-size:10px;font-weight:800}.exercise-body{padding:13px}.exercise-title{display:flex;justify-content:space-between;gap:10px;align-items:flex-start}.exercise h3{margin:0;font-size:18px;letter-spacing:-.2px}.badge{font-size:10px;color:white;background:linear-gradient(135deg,var(--accent2),var(--accent));border-radius:999px;padding:5px 8px;white-space:nowrap;font-weight:850;box-shadow:0 4px 10px color-mix(in srgb,var(--accent2) 25%,transparent)}.focus{color:var(--text);opacity:.88;font-size:13px;line-height:1.45;margin-top:8px}
+.exercise{background:var(--surface2);border-radius:19px;overflow:hidden;margin-top:14px;border:1px solid var(--line);box-shadow:var(--softshadow)}.photo-wrap{position:relative;background:#111;overflow:hidden}.exercise-photo{width:100%;aspect-ratio:16/9;object-fit:cover;display:block;filter:saturate(.96) contrast(1.02)}.exercise-body{padding:13px}.exercise-title{display:flex;justify-content:space-between;gap:10px;align-items:flex-start}.exercise h3{margin:0;font-size:18px;letter-spacing:-.2px}.badge{font-size:10px;color:white;background:linear-gradient(135deg,var(--accent2),var(--accent));border-radius:999px;padding:5px 8px;white-space:nowrap;font-weight:850;box-shadow:0 4px 10px color-mix(in srgb,var(--accent2) 25%,transparent)}.focus{color:var(--text);opacity:.88;font-size:13px;line-height:1.45;margin-top:8px}
 details{margin-top:10px;border-top:1px solid var(--line);padding-top:9px}details summary{color:var(--accent);cursor:pointer;font-weight:800;font-size:13px}.tech-list{padding-left:20px;color:var(--text);opacity:.9;font-size:13px;line-height:1.48}.tech-list li{margin:7px 0}.mistakes{color:color-mix(in srgb,var(--danger) 78%,var(--text))}.video-meta{font-size:11px;color:var(--muted);margin-top:10px;font-weight:700}
 .video-actions{display:flex;gap:8px;flex-wrap:wrap;margin-top:7px}.btn,.video-actions a,.video-actions button{border:0;text-decoration:none;color:white;padding:10px 12px;border-radius:12px;font-size:12px;font-weight:850;box-shadow:0 6px 0 rgba(0,0,0,.16),0 10px 18px rgba(0,0,0,.14);transition:transform .1s,box-shadow .1s}.btn:active,.video-actions a:active,.video-actions button:active{transform:translateY(4px);box-shadow:0 2px 0 rgba(0,0,0,.14)}.btn-video{background:linear-gradient(135deg,#ff5d92,#ff7a5c)}.btn-youtube{background:linear-gradient(135deg,#ff2d55,#d6002d)}.btn-history{background:linear-gradient(135deg,#735bff,#4b9bff)}
 .video-wrap{display:none;margin-top:11px;aspect-ratio:16/9}.video-wrap.show{display:block}.video-wrap iframe{width:100%;height:100%;border:0;border-radius:14px}.prev{margin:11px 0 4px;padding:10px;background:var(--surface);border:1px solid var(--line);border-radius:13px}.suggestion{margin-top:6px;color:color-mix(in srgb,var(--accent2) 70%,var(--text));font-size:12px;line-height:1.35}.pr{margin-top:6px;color:var(--good);font-size:12px;font-weight:700}
@@ -43,8 +43,64 @@ button.primary{width:100%;border:0;border-radius:16px;background:linear-gradient
 }
 
 
-.exercise-photo{width:100%;aspect-ratio:16/9;object-fit:cover;object-position:center 22%;display:block;background:#111;transform:scale(1.06);transform-origin:center top}
+.exercise-photo{width:100%;aspect-ratio:16/9;object-fit:cover;object-position:center;display:block;background:#111;transform:none;max-width:100%}
 .exercise[data-ex="hip_thrust_heavy"] .exercise-photo{transform:none;object-position:center}
+
+/* v9: previews contain no overlaid captions; only the actual photo is shown. */
+.photo-wrap{position:relative;max-width:100%;width:100%;overflow:hidden;isolation:isolate}
+.photo-wrap::before,.photo-wrap::after,.photo-chip{display:none!important;content:none!important}
+.exercise-photo{display:block;width:100%;height:auto;aspect-ratio:16/9;object-fit:cover;object-position:center;transform:none!important;max-width:100%;filter:none}
+
+/* v9: prevent page-wide horizontal scrolling on narrow iPhones. */
+html{width:100%;max-width:100%;overflow-x:hidden;overflow-x:clip}
+body{width:100%;max-width:100%;overflow-x:hidden;overflow-x:clip}
+main,#app,.card,.hero-card,.exercise,.exercise-body,.photo-wrap,.prev,details,.backupbox,.history-item{min-width:0;max-width:100%}
+main{width:100%;box-sizing:border-box}
+img,svg,iframe,video{max-width:100%}
+.card,.exercise{overflow:hidden}
+.header-row{min-width:0;width:100%}
+.header-row>div:first-child{min-width:0;flex:1 1 auto}
+.header-row h1{max-width:100%;overflow-wrap:break-word;word-break:normal;font-size:clamp(16px,4.5vw,22px)}
+.theme-toggle{flex:0 0 auto}
+.sub{overflow-wrap:anywhere}
+.flex{min-width:0;flex-wrap:wrap}
+.flex>div{min-width:0}
+.hero-card>.flex>div:first-child{flex:1 1 145px;min-width:0}
+#session-date{max-width:100%;width:145px!important;min-width:0;flex:0 1 145px}
+.exercise-title{min-width:0}
+.exercise-title>div:first-child{min-width:0;flex:1 1 0}
+.exercise-title h3,.prev,.suggestion,.pr,.focus,.small,.meta,.notice,.history-item{overflow-wrap:anywhere}
+.video-actions{width:100%;min-width:0}
+.video-actions>*{max-width:100%;min-width:0;overflow-wrap:anywhere;text-align:center}
+.video-wrap{max-width:100%}
+.sethead,.setrow{width:100%;max-width:100%;min-width:0;grid-template-columns:30px minmax(0,1fr) minmax(0,1fr) 46px 39px;column-gap:5px}
+.sethead>* , .setrow>*{min-width:0;max-width:100%}
+.setrow input{width:100%;min-width:0;padding:10px 3px;text-align:center;font-size:16px}
+.setrow input::placeholder{font-size:11px}
+.donebtn{width:100%;min-width:0;padding:0}
+input,select,textarea,button{max-width:100%;box-sizing:border-box}
+.statgrid{grid-template-columns:repeat(2,minmax(0,1fr))}
+.stat{min-width:0;overflow-wrap:anywhere}
+.chart{max-width:100%;overflow:hidden}
+.bottomnav{max-width:100vw;min-width:0;overflow:hidden}
+.bottomnav button{min-width:0;overflow-wrap:break-word}
+.timer{width:auto;max-width:calc(100vw - 24px);box-sizing:border-box}
+.timer-label{min-width:0;flex:1 1 0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.timer button{flex:0 0 auto;padding:7px}
+.actions>*{min-width:0;max-width:100%}
+.tabs{max-width:100%;min-width:0;overscroll-behavior-x:contain;scrollbar-width:none}
+.tabs::-webkit-scrollbar{display:none}
+@media (max-width:360px){
+ main{padding-left:10px;padding-right:10px}
+ .card{padding:11px}
+ .exercise-body{padding:10px}
+ .sethead,.setrow{grid-template-columns:26px minmax(0,1fr) minmax(0,1fr) 42px 37px;gap:4px}
+ .setrow input{padding:9px 2px}
+ .badge{padding:4px 5px}
+ .video-actions{gap:7px}
+ .video-actions>*{font-size:11px;padding:9px 8px}
+}
+
 </style>
 </head>
 <body>
@@ -52,5 +108,5 @@ button.primary{width:100%;border:0;border-radius:16px;background:linear-gradient
 <main id="app"></main>
 <div id="restTimer" class="timer"><div class="timer-time" id="timerTime">0:00</div><div class="timer-label" id="timerLabel">Отдых</div><button onclick="adjustTimer(-15)">−15</button><button onclick="adjustTimer(15)">+15</button><button onclick="stopTimer()">✕</button></div>
 <nav class="bottomnav"><button id="nav-workout" class="active" onclick="showSection('workout')">🏋️ Тренировки</button><button id="nav-history" onclick="showSection('history')">🗓 История</button><button id="nav-progress" onclick="showSection('progress')">📈 Прогресс</button></nav>
-<script src="workouts.js?v=8"></script><script src="app.js?v=8"></script>
+<script src="workouts.js?v=9"></script><script src="app.js?v=9"></script>
 </body></html>
