@@ -1,5 +1,5 @@
 let currentSection='workout', currentWorkout='w1', timerRemaining=0, timerHandle=null, timerExercise='';
-const LEGACY_EXERCISE_NAMES={knee_raise:'Подъёмы коленей в упоре'};
+const LEGACY_EXERCISE_NAMES={knee_raise:'Подъёмы коленей в упоре',plank_3:'Планка на предплечьях'};
 const LOG_KEY='bodyDesignLogsV2', OLD_KEY='bodyDesignLogsV1', THEME_KEY='paulinaWorkoutTheme';
 function migrate(){if(!localStorage.getItem(LOG_KEY)&&localStorage.getItem(OLD_KEY)){try{localStorage.setItem(LOG_KEY,localStorage.getItem(OLD_KEY))}catch(e){}}}
 migrate();
