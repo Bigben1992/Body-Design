@@ -117,12 +117,20 @@ input,select,textarea,button{max-width:100%;box-sizing:border-box}
 .technique-details .tech-list li{padding:0 2px;margin:9px 0}
 @media (max-width:360px){.technique-details>summary{font-size:13px}}
 
+
+/* v21: Keep bottom navigation above any external Netlify site badge in Safari.
+   Standalone home-screen/PWA mode has no site badge, so use the entire screen. */
+:root{--nav-clearance:58px}
+@media (display-mode:standalone){:root{--nav-clearance:0px}}
+.bottomnav{bottom:var(--nav-clearance);z-index:70}
+.timer{bottom:calc(74px + env(safe-area-inset-bottom) + var(--nav-clearance))}
+main{padding-bottom:calc(110px + env(safe-area-inset-bottom) + var(--nav-clearance))}
 </style>
 </head>
 <body>
-<header><div class="header-row"><div><h1><span class="title-gradient">Paulina Best Ass Workout 🍑</span></h1><div class="sub">Ягодицы 60% · Ноги 40% · 3 тренировки</div></div><button id="themeToggle" class="theme-toggle" onclick="toggleTheme()">☀️<span>Светлая</span></button></div></header>
+<header><div class="header-row"><div><h1><span class="title-gradient">Paulina Best Ass Workout 🍑</span></h1><div class="sub">Ягодицы 60% · Ноги 40% · 3 тренировки · v21</div></div><button id="themeToggle" class="theme-toggle" onclick="toggleTheme()">☀️<span>Светлая</span></button></div></header>
 <main id="app"></main>
 <div id="restTimer" class="timer"><div class="timer-time" id="timerTime">0:00</div><div class="timer-label" id="timerLabel">Отдых</div><button onclick="adjustTimer(-15)">−15</button><button onclick="adjustTimer(15)">+15</button><button onclick="stopTimer()">✕</button></div>
 <nav class="bottomnav"><button id="nav-workout" class="active" onclick="showSection('workout')">🏋️ Тренировки</button><button id="nav-history" onclick="showSection('history')">🗓 История</button><button id="nav-progress" onclick="showSection('progress')">📈 Прогресс</button></nav>
-<script src="workouts.js?v=20"></script><script src="app.js?v=20"></script>
+<script src="workouts.js?v=21"></script><script src="app.js?v=21"></script>
 </body></html>
