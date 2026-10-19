@@ -31,7 +31,7 @@ function photoError(img,id){
 }
 
 function getTheme(){const saved=localStorage.getItem(THEME_KEY);if(saved)return saved;return matchMedia('(prefers-color-scheme: light)').matches?'light':'dark'}
-function applyTheme(theme){document.documentElement.dataset.theme=theme;localStorage.setItem(THEME_KEY,theme);const btn=document.getElementById('themeToggle');if(btn)btn.innerHTML=theme==='dark'?'☀️<span>Светлая</span>':'🌙<span>Тёмная</span>';const meta=document.querySelector('meta[name="theme-color"]');if(meta)meta.setAttribute('content',theme==='dark'?'#0c0d12':'#f6f4fb')}
+function applyTheme(theme){document.documentElement.dataset.theme=theme;localStorage.setItem(THEME_KEY,theme);const btn=document.getElementById('themeToggle');if(btn)btn.innerHTML=theme==='dark'?'☀️<span>Светлая</span>':'🌙<span>Тёмная</span>';const meta=document.querySelector('meta[name="theme-color"]');if(meta)meta.setAttribute('content','#101322')}
 function toggleTheme(){applyTheme(document.documentElement.dataset.theme==='dark'?'light':'dark')}
 applyTheme(getTheme());
 
@@ -70,4 +70,22 @@ function svgLine(svg,pts,suffix=''){const chartColor=getComputedStyle(document.d
 function drawProgress(){const id=document.getElementById('progressEx').value,metric=document.getElementById('metric').value,ex=exById(id),pts=seriesFor(id,metric),svg=document.getElementById('chart');svgLine(svg,pts,metric==='weight'?' кг':'');document.getElementById('progressText').textContent=`${ex.name} · ${metric==='weight'?'максимальный записанный вес за тренировку':metric==='volume'?'лучший set-volume (кг × повторы)':'максимум повторов или секунд'}`;const pr=exercisePR(id);document.getElementById('prStats').innerHTML=`<div class="stat"><b>${pr.maxW??'—'}</b><span>макс. вес, кг</span></div><div class="stat"><b>${pr.maxVol!=null?Math.round(pr.maxVol):'—'}</b><span>лучший set-volume</span></div>`}
 function drawSessionChart(){const pts=getLogs().slice().sort((a,b)=>new Date(a.date)-new Date(b.date)).map(l=>({date:l.date,value:sessionVolume(l)})).filter(p=>p.value>0);svgLine(document.getElementById('sessionChart'),pts,'')}
 function render(){if(currentSection==='workout')renderWorkout();if(currentSection==='history')renderHistory();if(currentSection==='progress')renderProgress()}
-render();if('serviceWorker'in navigator)navigator.serviceWorker.register('sw.js',{updateViaCache:'none'}).then(reg=>reg.update().catch(()=>{})).catch(()=>{});
+render();if('serviceWorker'in navigator)navigator.serviceWorker.register('sw.js?v=23',{updateViaCache:'none'}).then(reg=>reg.update().catch(()=>{})).catch(()=>{});
+
+
+// v23: keep content exactly below the actual fixed header, including the
+// changing iPhone safe-area height, orientation, zoom and text wrapping.
+function syncHeaderHeight(){
+  const bar=document.querySelector('header');
+  if(!bar)return;
+  const height=Math.ceil(bar.getBoundingClientRect().height);
+  if(height>0)document.documentElement.style.setProperty('--header-height',height+'px');
+}
+syncHeaderHeight();
+window.addEventListener('resize',syncHeaderHeight,{passive:true});
+window.addEventListener('orientationchange',syncHeaderHeight,{passive:true});
+if('ResizeObserver' in window){
+  const headerSizeObserver=new ResizeObserver(syncHeaderHeight);
+  headerSizeObserver.observe(document.querySelector('header'));
+}
+if(document.fonts&&document.fonts.ready)document.fonts.ready.then(syncHeaderHeight);

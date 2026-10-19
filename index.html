@@ -3,11 +3,11 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<meta name="theme-color" content="#0c0d12">
+<meta name="theme-color" content="#101322">
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
 <meta name="apple-mobile-web-app-title" content="Paulina Best Ass Workout">
-<link rel="manifest" href="manifest.webmanifest">
+<link rel="manifest" href="manifest.webmanifest?v=23">
 <link rel="apple-touch-icon" href="icon-192.png">
 <title>Paulina Best Ass Workout 🍑</title>
 <style>
@@ -123,12 +123,135 @@ input,select,textarea,button{max-width:100%;box-sizing:border-box}
 .tabs{scroll-margin-top:150px}
 #app{scroll-margin-top:150px}
 @media(max-width:430px){.topnav button{font-size:12px;padding:11px 4px}}
+
+/* v23: iOS full-bleed top app bar. A single continuous colour goes behind
+   the Dynamic Island/status area and through the entire navigation bar.
+   Fixed instead of sticky so iOS Safari overflow containers cannot unstick it. */
+:root,
+:root[data-theme="light"]{
+  --appbar:#101322;
+  --appbar-soft:#191d2e;
+  --appbar-line:rgba(255,255,255,.105);
+  --appbar-muted:#c0c5da;
+  --header-height:140px;
+}
+html{
+  background-color:var(--appbar);
+  scroll-padding-top:calc(var(--header-height) + 12px);
+}
+body{
+  padding-top:var(--header-height);
+}
+header{
+  position:fixed!important;
+  left:0;
+  top:0;
+  right:0;
+  width:100%;
+  z-index:110;
+  isolation:isolate;
+  background:var(--appbar)!important;
+  color:#fff;
+  border-bottom:0;
+  padding:calc(env(safe-area-inset-top, 0px) + 12px) 14px 14px;
+  backdrop-filter:none;
+  -webkit-backdrop-filter:none;
+  box-shadow:0 8px 28px rgba(2,3,10,.34);
+}
+header::after{
+  content:"";
+  pointer-events:none;
+  position:absolute;
+  bottom:0;
+  left:0;
+  right:0;
+  height:2px;
+  background:linear-gradient(90deg,#ff5998 6%,#b06aff 53%,#55d5e6 100%);
+}
+header .header-row{min-height:43px;align-items:center}
+header .header-row h1{
+  color:white;
+  font-weight:900;
+  font-size:clamp(17px,4.6vw,22px);
+  line-height:1.17;
+  letter-spacing:-.48px;
+}
+header .title-gradient{
+  background:linear-gradient(100deg,#ff759e 0%,#ffc29b 32%,#bd9bff 68%,#78e0e6 100%);
+  -webkit-background-clip:text;
+  background-clip:text;
+  color:transparent;
+  filter:drop-shadow(0 3px 10px rgba(254,106,163,.13));
+}
+header .sub{
+  color:var(--appbar-muted);
+  letter-spacing:.13px;
+  font-size:11px;
+  margin-top:5px;
+}
+header .theme-toggle{
+  color:#f7f8ff;
+  background:linear-gradient(180deg,#292d43,#20243a);
+  border:1px solid rgba(255,255,255,.14);
+  box-shadow:0 5px 14px rgba(0,0,0,.26),inset 0 1px 0 rgba(255,255,255,.11);
+  border-radius:13px;
+}
+header .topnav{
+  width:100%;
+  max-width:760px;
+  margin:12px auto 0;
+  border:1px solid var(--appbar-line);
+  border-radius:17px;
+  padding:5px;
+  display:flex;
+  align-items:stretch;
+  gap:5px;
+  background:var(--appbar-soft);
+  box-shadow:inset 0 1px 4px rgba(0,0,0,.14);
+  overflow:visible;
+}
+header .topnav button{
+  flex:1 1 0;
+  min-width:0;
+  max-width:none;
+  color:var(--appbar-muted);
+  background:transparent;
+  padding:11px 4px;
+  border-radius:12px;
+  font-size:12px;
+  line-height:1.15;
+  font-weight:790;
+  white-space:nowrap;
+  box-shadow:none;
+  touch-action:manipulation;
+  -webkit-tap-highlight-color:transparent;
+}
+header .topnav button.active{
+  color:white;
+  background:linear-gradient(125deg,#ff5f9e 0%,#a46bfb 100%);
+  box-shadow:0 3px 10px rgba(206,93,208,.25),inset 0 1px rgba(255,255,255,.24);
+}
+header .topnav button:focus-visible{
+  outline:2px solid #85dfeb;
+  outline-offset:2px;
+}
+#app,.tabs{scroll-margin-top:calc(var(--header-height) + 12px)}
+@media(max-width:360px){
+  header{padding-left:10px;padding-right:10px}
+  header .sub{font-size:10px}
+  header .topnav{gap:2px;padding:4px}
+  header .topnav button{font-size:11px;padding:11px 2px}
+}
+@media(prefers-reduced-motion:reduce){
+  html:focus-within{scroll-behavior:auto}
+}
+
 </style>
 </head>
 <body>
-<header><div class="header-row"><div><h1><span class="title-gradient">Paulina Best Ass Workout 🍑</span></h1><div class="sub">Ягодицы 60% · Ноги 40% · 3 тренировки · v22</div></div><button id="themeToggle" class="theme-toggle" onclick="toggleTheme()">☀️<span>Светлая</span></button></div>
+<header><div class="header-row"><div><h1><span class="title-gradient">Paulina Best Ass Workout 🍑</span></h1><div class="sub">Ягодицы 60% · Ноги 40% · 3 тренировки · v23</div></div><button id="themeToggle" class="theme-toggle" onclick="toggleTheme()">☀️<span>Светлая</span></button></div>
 <nav class="topnav" aria-label="Разделы приложения"><button id="nav-workout" class="active" onclick="showSection('workout')">🏋️ Тренировки</button><button id="nav-history" onclick="showSection('history')">🗓 История</button><button id="nav-progress" onclick="showSection('progress')">📈 Прогресс</button></nav></header>
 <main id="app"></main>
 <div id="restTimer" class="timer"><div class="timer-time" id="timerTime">0:00</div><div class="timer-label" id="timerLabel">Отдых</div><button onclick="adjustTimer(-15)">−15</button><button onclick="adjustTimer(15)">+15</button><button onclick="stopTimer()">✕</button></div>
-<script src="workouts.js?v=22"></script><script src="app.js?v=22"></script>
+<script src="workouts.js?v=23"></script><script src="app.js?v=23"></script>
 </body></html>
