@@ -38,7 +38,7 @@ applyTheme(getTheme());
 function showSection(s){
   const alreadyHere=currentSection===s;
   currentSection=s;
-  document.querySelectorAll('.bottomnav button').forEach(b=>b.classList.remove('active'));
+  document.querySelectorAll('.topnav button').forEach(b=>b.classList.remove('active'));
   document.getElementById('nav-'+s).classList.add('active');
   // Do not re-render the current workout when the user taps “Тренировки” again:
   // doing so would otherwise erase unsaved weights/reps/RIR in its input fields.
