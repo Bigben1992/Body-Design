@@ -1,5 +1,5 @@
 let currentSection='workout', currentWorkout='w1', timerRemaining=0, timerHandle=null, timerExercise='';
-const LEGACY_EXERCISE_NAMES={knee_raise:'Подъёмы коленей в упоре',plank_3:'Планка на предплечьях'};
+const LEGACY_EXERCISE_NAMES={rdl:'Румынская тяга',knee_raise:'Подъёмы коленей в упоре',plank_3:'Планка на предплечьях'};
 const LOG_KEY='bodyDesignLogsV2', OLD_KEY='bodyDesignLogsV1', THEME_KEY='paulinaWorkoutTheme';
 function migrate(){if(!localStorage.getItem(LOG_KEY)&&localStorage.getItem(OLD_KEY)){try{localStorage.setItem(LOG_KEY,localStorage.getItem(OLD_KEY))}catch(e){}}}
 migrate();
@@ -70,7 +70,7 @@ function svgLine(svg,pts,suffix=''){const chartColor=getComputedStyle(document.d
 function drawProgress(){const id=document.getElementById('progressEx').value,metric=document.getElementById('metric').value,ex=exById(id),pts=seriesFor(id,metric),svg=document.getElementById('chart');svgLine(svg,pts,metric==='weight'?' кг':'');document.getElementById('progressText').textContent=`${ex.name} · ${metric==='weight'?'максимальный записанный вес за тренировку':metric==='volume'?'лучший set-volume (кг × повторы)':'максимум повторов или секунд'}`;const pr=exercisePR(id);document.getElementById('prStats').innerHTML=`<div class="stat"><b>${pr.maxW??'—'}</b><span>макс. вес, кг</span></div><div class="stat"><b>${pr.maxVol!=null?Math.round(pr.maxVol):'—'}</b><span>лучший set-volume</span></div>`}
 function drawSessionChart(){const pts=getLogs().slice().sort((a,b)=>new Date(a.date)-new Date(b.date)).map(l=>({date:l.date,value:sessionVolume(l)})).filter(p=>p.value>0);svgLine(document.getElementById('sessionChart'),pts,'')}
 function render(){if(currentSection==='workout')renderWorkout();if(currentSection==='history')renderHistory();if(currentSection==='progress')renderProgress()}
-render();if('serviceWorker'in navigator)navigator.serviceWorker.register('sw.js?v=24',{updateViaCache:'none'}).then(reg=>reg.update().catch(()=>{})).catch(()=>{});
+render();if('serviceWorker'in navigator)navigator.serviceWorker.register('sw.js?v=26',{updateViaCache:'none'}).then(reg=>reg.update().catch(()=>{})).catch(()=>{});
 
 
 // v23: keep content exactly below the actual fixed header, including the
